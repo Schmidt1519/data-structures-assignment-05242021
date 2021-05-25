@@ -43,5 +43,5 @@ class LinkedList:
         if results:
             print(results)
         else:
-            print("Not Found")
+            print(str(value) + " Not Found")
         return results

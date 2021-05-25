@@ -15,36 +15,40 @@ class BSTNode:
 
         if data < self.data:
             if self.left:
-                self.left.insert(data)
+                self.left.insert_node(data)
                 return
             self.left = BSTNode(data)
             return
 
         if self.right:
-            self.right.insert(data)
+            self.right.insert_node(data)
             return
         self.right = BSTNode(data)
 
 
-    # def insert_node(root, data):
-    #     if root is None:
-    #         return BSTNode(data)
-    #     else:
-    #         if root.data == data:
-    #             return root
-    #         elif root.data < data:
-    #             root.right = insert_node(root.right, data)
-    #         else:
-    #             root.left = insert_node(root.left, data)
-    #     return root
+    def search_for_node(self, value):
+        if self.data == value:
+            print(f'{value} is found.')
+            return True
+
+        if value < self.data:
+            if self.left:
+                return self.left.search_for_node(value)
+            else:
+                print(f'{value} is not found.')
+                return False
+
+        if value > self.data:
+            if self.right:
+                return self.right.search_for_node(value)
+            else:
+                print(f'{value} is not found.')
+                return False
 
 
-    def search_for_node(self, data):
-        if self is None or self.data == data:
-            return self
-
-        if self.data < data:
-            return search_for_node(self.right, data)
-
-        return search_for_node(self.left, data)
-
+    def print_tree(self):
+        if self.left:
+            self.left.print_tree()
+        print(self.data),
+        if self.right:
+            self.right.print_tree()
