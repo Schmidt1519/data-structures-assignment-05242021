@@ -46,9 +46,17 @@ class BSTNode:
                 return False
 
 
-    def print_tree(self):
+    def print_inorder(self):
         if self.left:
-            self.left.print_tree()
+            self.left.print_inorder()
         print(self.data),
         if self.right:
-            self.right.print_tree()
+            self.right.print_inorder()
+
+
+    def print_preorder(self):
+        print(self.data)
+        if self.left:
+            self.left.print_preorder()
+        if self.right:
+            self.right.print_preorder()
