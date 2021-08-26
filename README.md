@@ -1,3 +1,5 @@
-# data-structures-assignment-05242021
+# Data Structures Assignment 5/24/2021
+Data structures assignement covering list/set/tuple/dictionary, linked list, binary tree, stack, and queue.
 
-dCC data structures assignement from 5/24/2021
+## Technologies
+* Python
